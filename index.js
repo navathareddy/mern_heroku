@@ -3,7 +3,7 @@ const app=express()
 const mongoose=require('mongoose')
 const routes=require('./routes/books')
 const URI = require('./config/index');
-
+const path = require('path');
 app.use(express.json())
 
 app.use(express.static(path.join(__dirname, 'build')));
