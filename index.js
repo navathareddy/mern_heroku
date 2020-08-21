@@ -1,13 +1,13 @@
 const express= require('express')
 const app=express()
 const mongoose=require('mongoose')
-const routes = require('./routes');
+const routes=require('./routes/books')
 const URI = require('./config/index');
 
 app.use(express.json())
 
 app.use(express.static('client/build'));
-app.use(routes);
+app.use('/api/books',routes)
 
 mongoose
   .connect(process.env.MONGODB_URI || URI, {
