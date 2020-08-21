@@ -5,6 +5,7 @@ const path = require("path");
 const routes = require("./routes/books");
 const URI = require("./config/index");
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 mongoose
@@ -25,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
   //   res.sendFile(path.join(__dirname,'../client/build/index.html'));
   // });
   app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.sendFile(path.join(__dirname+'../client/build/index.html'));
 });
 }
 
