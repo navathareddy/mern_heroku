@@ -29,8 +29,8 @@ app.get('*',(req,res)=>{
 
 const PORT=process.env.PORT || 5000
 
-// app.get('/',(req,res)=>{
-//     res.send('hello I am MERN')
-// })
+app.get('/',(req,res)=>{
+    res.send('hello I am MERN')
+})
 
 app.listen(PORT,()=>console.log(`listening to port ${PORT} successfuly`))
