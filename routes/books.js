@@ -3,8 +3,6 @@ const book_router = express.Router();
 const path = require('path');
 const Book = require("../models/books");
 
-
-
 book_router.get("/", async (req, res) => {
   const books = await Book.find();
   res.send(books);
