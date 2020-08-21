@@ -1,8 +1,11 @@
 const express = require("express");
 const book_router = express.Router();
-
+const path = require('path');
 const Book = require("../models/books");
 
+book_router.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 book_router.get("/", async (req, res) => {
   const books = await Book.find();
