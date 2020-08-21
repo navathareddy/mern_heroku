@@ -3,10 +3,13 @@ const app=express()
 const mongoose=require('mongoose')
 const routes=require('./routes/books')
 const URI = require('./config/index');
-
+const path = require("path");
 app.use(express.json())
 
-app.use(express.static('client/build'));
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+  });
+  
 app.use('/api/books',routes)
 
 mongoose
